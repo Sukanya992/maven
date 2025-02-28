@@ -35,7 +35,7 @@
                 <version>2.8.2</version>
                 <configuration>
                     <repositoryId>nexus-releases</repositoryId>
-                    <url>http://<GCP-IP>:8081/repository/maven-releases/</url>
+                    <url>http://34.58.13.0:8081/repository/maven-releases/</url>
                 </configuration>
             </plugin>
         </plugins>
