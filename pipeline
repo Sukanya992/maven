@@ -6,8 +6,7 @@ pipeline {
     }
 
     environment {
-        REPO_URL = 'https://github.com/your-username/maven-hello-world'
-        CREDENTIALS_ID = 'nexus-credentials'
+        REPO_URL = 'https://github.com/Sukanya992/maven.git'
     }
 
     stages {
