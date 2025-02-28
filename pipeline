@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven-3.8.4'
+    }
+
+    environment {
+        REPO_URL = 'https://github.com/your-username/maven-hello-world'
+        CREDENTIALS_ID = 'nexus-credentials'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git url: "${REPO_URL}", credentialsId: "${CREDENTIALS_ID}"
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+
+        stage('Publish to Nexus') {
+            steps {
+                sh 'mvn deploy'
+            }
+        }
+    }
+}
